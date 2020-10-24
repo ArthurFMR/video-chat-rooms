@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- FONTAWESOME : https://kit.fontawesome.com/a23e6feb03.js -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+    <title>Video Chat Room</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg  bg-secondary fixed-top">
+        
+        <button id="sidebarCollapse" class="btn navbar-btn" >
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="">
+            <i class="fa fa-comments" style="color: white;"></i>
+            <i class="fa fa-video" style="color: white;"></i>
+            <h3 id="logo">VCR</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id="link" href="index.html">
+                        <i class="fa fa-sign-out-alt"></i>
+                        LogOut<span class="sr-only">(current) </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="wrapper fixed-left">
+        
+        <nav id="sidebar" class="shadow-sm rounded">
+            <div class="sidebar-header text-center">
+                <h5><i class="fa fa-user mr-2"></i>Users Connected</h5>
+            </div>
+            <ul id="users">
+            </ul>
+        </nav>
+        
+        
+        <div id="content">
+            <h2 class="text-center" id="room-name"></h2>
+            <input type="image" id="web-cam-button" style="cursor: pointer;" src="img/icons8-webcam-96.png" width="50px">
+            <span id="web-cam-button-text">Click it to Turn On Your Cam</span>
+            <main >
+                <div class="chat-messages ml-2"></div>
+            </main>
+            <div class="chat-form-container">
+                <form id="chat-form">
+                    <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+                    <button class="btn ml-2" style="color: white; border: white solid;">
+                        <div class="send-icon">
+                        <i class="fas fa-paper-plane "></i> 
+                        Send
+                    </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+        integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+        crossorigin="anonymous"
+      ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/socket.js"></script>
+</body>
+
+</html>
